@@ -1,0 +1,3 @@
+- Put Max speed on all directions
+- Make level for [insert name]
+- Name cube
