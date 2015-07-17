@@ -4,6 +4,8 @@ var madhops: float;
 var maxspeed: float = 30;
 private var rb: Rigidbody;
 private var onground: boolean = true;
+var HorizontalAxis: String;
+var VerticalAxis: String;
 
 
 function Start()
@@ -12,8 +14,9 @@ function Start()
 }
 
 function FixedUpdate () {
-	var moveHorizontal = Input.GetAxis("Horizontal");
-	var moveVertical = Input.GetAxis("Vertical");
+	var moveHorizontal = Input.GetAxis(HorizontalAxis);
+	var moveVertical = Input.GetAxis(VerticalAxis);
+	
 	
 	if(!onground && transform.position.y <= 0)
 	{
@@ -33,6 +36,6 @@ function FixedUpdate () {
 	{
 		rb.AddForce(movement);
 	}
-	print(rb.velocity);
+	//print(rb.velocity);
 }
 
