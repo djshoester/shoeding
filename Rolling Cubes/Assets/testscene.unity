@@ -87,6 +87,108 @@ NavMeshSettings:
     cellSize: .166666657
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &208011724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 208011730}
+  - 20: {fileID: 208011729}
+  - 92: {fileID: 208011728}
+  - 124: {fileID: 208011727}
+  - 81: {fileID: 208011726}
+  - 114: {fileID: 208011725}
+  m_Layer: 0
+  m_Name: SpherewiseCamera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &208011725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208011724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3051bee20acf645a5019e1bea35472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 738426736}
+  distance: 5
+  height: 5
+  heightDamping: 2
+  rotationDamping: .600000024
+--- !u!81 &208011726
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208011724}
+  m_Enabled: 1
+--- !u!124 &208011727
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208011724}
+  m_Enabled: 1
+--- !u!92 &208011728
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208011724}
+  m_Enabled: 1
+--- !u!20 &208011729
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208011724}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: .5
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
+--- !u!4 &208011730
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208011724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.61999989, y: .219999999, z: -5.01000023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &738426731
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,8 +203,8 @@ GameObject:
   - 114: {fileID: 738426732}
   - 54: {fileID: 738426737}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
+  m_Name: SphereWise
+  m_TagString: AffectedByWind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,9 +220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c1fb5006759b240b619b955d46b806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 0
-  madhops: 0
+  thrust: 10
+  madhops: 100
   maxspeed: 30
+  HorizontalAxis: Horizontal2
+  VerticalAxis: Vertical2
 --- !u!23 &738426733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -175,7 +279,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!54 &738426737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -263,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 200}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1007865003
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +382,7 @@ GameObject:
   - 81: {fileID: 1007865004}
   - 114: {fileID: 1007865009}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Cube Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,9 +422,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: .5
     width: 1
-    height: 1
+    height: .5
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
@@ -349,7 +453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1007865009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1600660732
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +545,7 @@ GameObject:
   - 114: {fileID: 1600660738}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: AffectedByWind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -500,7 +604,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!54 &1600660737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -508,7 +612,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1600660732}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -530,3 +634,47 @@ MonoBehaviour:
   thrust: 15
   madhops: 200
   maxspeed: 30
+  HorizontalAxis: Horizontal
+  VerticalAxis: Vertical
+--- !u!1 &2057527358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2057527360}
+  - 114: {fileID: 2057527361}
+  m_Layer: 0
+  m_Name: WindZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2057527360
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057527358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+--- !u!114 &2057527361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057527358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38399db861cd52642acfb5d3e009c031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 10
+  radius: 100
+  direction: {x: 0, y: 5, z: 0}
